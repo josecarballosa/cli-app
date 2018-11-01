@@ -1,4 +1,7 @@
 const program = require('commander');
+const ora = require('ora');
+const ProgressBar = require('progress');
+const chalk = require('chalk');
 
 program
   .version('0.1.0', '-v, --version')
@@ -22,10 +25,36 @@ if (program.peppers || program.peppers || program.bbqSauce || program.cheese) {
 }
 else
   console.log('you ordered a standard pizza');
-console.log(`you will pay with ${program.card}`);
+console.log(`you will pay with ${program.card}\n`);
+
+const spinner = new ora({ spinner: { frames: ["⠋","⠙","⠹","⠸","⠼","⠴","⠦","⠧","⠇","⠏"] }});
+spinner.start('Cocking...');
+setTimeout(() => {
+  spinner.succeed('Done cooking');
+
+  const bar = new ProgressBar('Sending [:bar] :percent :etas', {
+    complete: '■',
+    incomplete: ' ',
+    width: 20,
+    total: 20,
+    clear: true,
+    callback: () => console.log(chalk.green('√') + ' Sent'),
+    ignore: true
+  });
+
+  const timer = setInterval(() => {
+    bar.tick();
+    if (bar.complete) {
+      console.log('Bon appetit!');
+      clearInterval(timer);
+    }
+  }, 50);
+
+}, 3000);
 
 // function list(val) {
 //   return val.split(',').map(Number);
 // }
 
 // console.log(`program.list: ${JSON.stringify(program.list)}`);
+
