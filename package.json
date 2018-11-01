@@ -1,0 +1,35 @@
+{
+  "name": "commander-test",
+  "version": "1.0.0",
+  "description": "cli app that uses commander library",
+  "main": "index.js",
+  "bin": {
+    "pizza": "bin/pizza.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "start": "node index",
+    "test:version": "npm start -- -v",
+    "test:help": "npm start -- -h",
+    "test:order1": "npm start -- -$ mastercard",
+    "test:order2": "npm start -- -pbc",
+    "test:order3": "npm start -- -c mozzarella",
+    "build": "npm run md:dist && npm run cp:dist",
+    "md:dist": "mkdir dist &",
+    "cp:dist": "copy index.js dist",
+    "deploy": "npm run md:bin && npm run cp:bin",
+    "md:bin": "mkdir bin &",
+    "cp:bin": "echo #! /usr/bin/env node > bin/pizza.js && echo require('../dist/index.js'); >> bin/pizza.js"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "commander",
+    "windows"
+  ],
+  "author": "Jose Carballosa",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.18.0"
+  }
+}
