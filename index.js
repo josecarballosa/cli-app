@@ -38,8 +38,7 @@ setTimeout(() => {
     width: 20,
     total: 20,
     clear: true,
-    callback: () => console.log(chalk.green('√') + ' Sent'),
-    ignore: true
+    callback: () => console.log(chalk.green('√') + ' Sent')
   });
 
   const timer = setInterval(() => {

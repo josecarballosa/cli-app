@@ -1,12 +1,12 @@
-# commander-test
-cli app demo that uses [commander library](https://www.npmjs.com/package/commander)
+# cli-demo
+demo cli app
 
 ## Get a local copy
 
 1. Clone this repository
 
    ```bash
-   git clone https://github.com/carballosa/commande-test.git
+   git clone https://github.com/carballosa/cli-demo.git
    cd commander-test
    ```
 1. Install app dependencies
