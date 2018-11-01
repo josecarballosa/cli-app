@@ -26,9 +26,11 @@ cli app demo that uses [commander library](https://www.npmjs.com/package/command
    ```
 1. Install app as a global `cli` package
 
-  <aside class="warning">
-    You need to perform this step from a console or terminal that is running as the user for which you want to install this command. For example, if you run it from VSCode integrated console, which normally runs as admin, then this command will only be available in consoles running as admin.
-  </aside>
+   | WARNING: You need to perform this step from a console or terminal that is running as the user for which you want to install this command. For example, if you run it from VSCode integrated console, which normally runs as admin, then this command will only be available in consoles running as admin. |
+   | --- |
+
+    
+
 
    ```bash
    npm install -g
